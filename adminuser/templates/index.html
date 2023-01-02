@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Welcome to User site</h1>
+        {% if user.is_authenticated %}
+
+        <a href="{% url 'adminuser:noti' %}" class="px-2 py-4 text-gray-500
+            text-lg font-semibold"> Add User Notification </a>
+        <a href="{% url 'adminuser:logout' %}" class="px-2 py-4 text-gray-500
+            text-lg font-semibold"> Logout </a>
+        {% else %}
+        <a href="{% url 'adminuser:login' %}" class="px-2 py-4 text-gray-500
+            text-lg font-semibold"> Login </a>/
+        <a href="{% url 'adminuser:SignUp' %}" class="px-2 py-4 text-gray-500
+            text-lg font-semibold"> Sign up </a>
+        {% endif %}
+
+        
+    </body>
+</html>

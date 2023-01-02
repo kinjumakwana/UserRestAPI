@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 class="text-2xl font-bold m-10 ">Login User</h1>
+<div class="container py-5">
+    <form class="w-2/5 bg-white shadow-md m-10 px-8 mb-4" method="post">
+        {% csrf_token %}
+        <!-- {{form}} -->
+
+        <div class="mb-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Username: </label>
+            <div class="shadow apperence-none border rounded py-2 px-3 mr-10 text-gray-700 leading-tight">
+                {{form.username}}
+            </div>
+        </div>
+        
+        <div class="mb-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2">Password: </label>
+            <div class="shadow apperence-none border rounded py-2 px-3 mr-10 text-gray-700 leading-tight">
+                {{form.password}}
+            </div>
+        </div>
+        
+        <div class="mb-2">        
+            <input class="shadow apperence-none border rounded py-2 px-3 mr-10 bg-green-500" type="submit" name=":login" value="Login">
+        </div> 
+    </form>
+    <div class="m-10">Do not have an account?
+        <a class="text-indigo-500" href="{% url 'adminuser:SignUp' %}"> Register </a>
+    </div>
+
+</body>
+</html>
+

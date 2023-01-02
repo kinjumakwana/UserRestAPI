@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-2xl font-bold m-10 ">Register User</h1>
+    <div class="container py-5 ml-10">
+        <form action="" method="post" novalidate>
+            {% csrf_token %} 
+            {% for fm in form %}
+            {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+            {% endfor %}
+            <input class="shadow apperence-none border rounded py-2 px-3 ml-10 bg-green-500" type="submit" value="Submit">
+        </form>    
+            
+            <div class="m-2">Do have an account?
+                <a class="text-indigo-500" href="{% url 'adminuser:login' %}"> Login </a>
+            </div>
+        
+    </div>
+            <!-- message  -->
+            {% if messages %}
+                {% for message in messages %}
+                    <small {% if messages.tags %} class="{{message.tags}}" {% endif%}> {{message}} </small>
+                {% endfor %}
+            {% endif %}
+    
+    
+</body>
+</html>
